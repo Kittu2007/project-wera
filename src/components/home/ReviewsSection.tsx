@@ -1,61 +1,57 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Star } from "lucide-react"
 
 const REVIEWS = [
     {
         id: 1,
-        name: "Sarah J.",
-        rating: 5,
-        text: "Absolutely love the unique design and soft fabric! WERA is my new favorite.",
-        date: "Jun, 2023",
+        text: "Top-notch streetwear! Soft fabric, clean print, and the relaxed fit is exactly what I wanted. Definitely copping the next drop.",
+        author: "Alex",
+        handle: "@alexcreates",
+        avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80"
     },
     {
         id: 2,
-        name: "Mike T.",
-        rating: 5,
-        text: "Quality and fit are amazing. Shipping was faster than expected for POD.",
-        date: "July, 2023",
+        text: "The aura collection is insane. I love how subtle the colors are but they still pop. Shipping was super fast too!",
+        author: "Jordan",
+        handle: "@jordansstyle",
+        avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80"
     },
     {
         id: 3,
-        name: "Jessica R.",
-        rating: 4,
-        text: "Great designs, very artistic. The hoodie is so comfortable.",
-        date: "Aug, 2023",
-    },
+        text: "Finally a brand that gets the oversized aesthetic right. The quality feels premium, not that cheap merch feel. 10/10.",
+        author: "Riya",
+        handle: "@riyawears",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
+    }
 ]
 
 export function ReviewsSection() {
     return (
-        <section className="py-20 px-4">
-            <div className="container mx-auto space-y-10">
-                <h2 className="text-2xl font-bold tracking-tight">Reviews</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section className="py-24 px-6 lg:px-12 bg-transparent relative">
+            {/* Localized Aura Glow for Reviews */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-r from-accent-purple/20 to-accent-peach/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
+
+            <div className="container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {REVIEWS.map((review) => (
-                        <Card key={review.id} className="bg-background shadow-soft border-none">
-                            <CardContent className="p-6 space-y-4">
-                                <div className="flex items-center gap-2">
-                                    <div className="h-10 w-10 rounded-full bg-accent-peach flex items-center justify-center text-accent-foreground font-bold">
-                                        {review.name[0]}
-                                    </div>
-                                    <div>
-                                        <div className="font-semibold text-sm">{review.name}</div>
-                                        <div className="text-xs text-muted-foreground">{review.date}</div>
-                                    </div>
+                        <div key={review.id} className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow">
+                            <div className="flex gap-1 mb-4 text-black">
+                                {[...Array(5)].map((_, i) => (
+                                    <Star key={i} className="w-5 h-5 fill-current" />
+                                ))}
+                            </div>
+                            <p className="text-neutral-700 font-medium mb-8 leading-relaxed">
+                                "{review.text}"
+                            </p>
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full overflow-hidden bg-neutral-200">
+                                    <img src={review.avatar} alt={review.author} className="w-full h-full object-cover" />
                                 </div>
-                                <div className="flex text-yellow-400">
-                                    {Array.from({ length: 5 }).map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className={`h-4 w-4 ${i < review.rating ? "fill-current" : "text-muted"}`}
-                                        />
-                                    ))}
+                                <div>
+                                    <p className="font-bold text-black">{review.author}</p>
+                                    <p className="text-sm text-neutral-500">{review.handle}</p>
                                 </div>
-                                <p className="text-sm text-neutral-600 leading-relaxed">
-                                    &ldquo;{review.text}&rdquo;
-                                </p>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>

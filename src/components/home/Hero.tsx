@@ -3,36 +3,35 @@ import { Button } from "@/components/ui/button"
 
 export function Hero() {
     return (
-        <section className="relative overflow-hidden py-20 px-4 md:py-32">
-            <div className="container mx-auto grid gap-12 md:grid-cols-2 items-center">
-                <div className="flex flex-col items-start space-y-6 z-10">
-                    <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
-                        MYTHOLOGY
-                        <br />
-                        <span className="text-primary/80">REMIXED</span>
-                    </h1>
-                    <p className="text-xl text-muted-foreground font-medium">
-                        Drop 003: Celebrity x Myth
-                    </p>
-                    <div className="flex gap-4">
-                        <Link href="/shop">
-                            <Button size="lg" className="rounded-full px-8 text-lg font-semibold cursor-pointer pointer-events-auto">
-                                Shop Now
-                            </Button>
-                        </Link>
+        <section className="relative w-full py-20 lg:py-32 px-6 lg:px-12 bg-transparent">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Left Content */}
+                <div className="flex flex-col items-start space-y-8 z-10">
+                    <div className="space-y-2">
+                        <h1 className="text-6xl font-black tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl text-black leading-[0.9]">
+                            MYTHOLOGY
+                            <br />
+                            REMIXED
+                        </h1>
+                        <p className="text-xl md:text-2xl font-medium text-neutral-600 tracking-wide mt-4">
+                            DROP 003: CELEBRITY X MYTH
+                        </p>
                     </div>
+
+                    <Link href="/shop">
+                        <Button className="rounded-full px-10 py-8 text-xl font-bold bg-black text-white hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                            Shop now
+                        </Button>
+                    </Link>
                 </div>
 
-                {/* Visual Element */}
-                <div className="relative z-10 w-full max-w-md mx-auto md:max-w-none md:mr-0">
-                    {/* Focused Glow behind model */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-accent-blue/30 via-accent-purple/30 to-accent-peach/30 blur-[80px] -z-10 rounded-full" />
-
-                    <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                {/* Right Image */}
+                <div className="relative z-10 w-full flex justify-center lg:justify-end">
+                    <div className="relative w-full max-w-[600px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white/50 backdrop-blur-sm ring-1 ring-black/5">
                         <img
-                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
-                            alt="WERA Model"
-                            className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
+                            alt="WERA Model in White Hoodie"
+                            className="object-cover w-full h-full"
                         />
                     </div>
                 </div>
