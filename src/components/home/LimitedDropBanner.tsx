@@ -4,30 +4,28 @@ import { motion } from "framer-motion"
 
 export function LimitedDropBanner() {
     return (
-        <div className="relative w-full overflow-hidden py-3 text-white">
-            {/* Background Image */}
-            <div
-                className="absolute inset-0 bg-cover bg-center z-0"
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80")' }}
-            />
-            <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px] z-0" />
-
+        <div className="w-full h-12 overflow-hidden bg-gradient-to-r from-blue-100 via-purple-100 to-orange-100 flex items-center border-y border-white/50 relative z-20">
             <motion.div
-                className="relative z-10 flex whitespace-nowrap"
+                className="flex whitespace-nowrap min-w-full"
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{
                     repeat: Infinity,
                     ease: "linear",
-                    duration: 20,
+                    duration: 15,
                 }}
             >
-                <div className="flex items-center gap-8 mx-4">
-                    {Array.from({ length: 10 }).map((_, i) => (
-                        <span key={i} className="text-sm font-bold tracking-widest uppercase">
-                            Limited Drop + Animated Banner + Limited Drop +
+                {Array.from({ length: 12 }).map((_, i) => (
+                    <div key={i} className="flex items-center mx-4 gap-4">
+                        <span className="text-sm font-bold tracking-widest uppercase text-gray-800">
+                            LIMITED DROP
                         </span>
-                    ))}
-                </div>
+                        <span className="text-xl leading-none text-gray-400">+</span>
+                        <span className="text-sm font-bold tracking-widest uppercase text-gray-800">
+                            ANIMATED BANNER
+                        </span>
+                        <span className="text-xl leading-none text-gray-400">+</span>
+                    </div>
+                ))}
             </motion.div>
         </div>
     )

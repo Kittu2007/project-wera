@@ -27,28 +27,34 @@ const REVIEWS = [
 export function ReviewsSection() {
     return (
         <section className="py-24 px-6 lg:px-12 bg-transparent relative">
-            {/* Localized Aura Glow for Reviews */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-r from-accent-purple/20 to-accent-peach/20 blur-[120px] -z-10 rounded-full pointer-events-none" />
+            {/* Gradient Aura for this section */}
+            <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-[40%] h-[40%] bg-blue-100 blur-[100px] -z-10 rounded-full opacity-60" />
+            <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[40%] h-[40%] bg-orange-100 blur-[100px] -z-10 rounded-full opacity-60" />
 
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {REVIEWS.map((review) => (
-                        <div key={review.id} className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow">
-                            <div className="flex gap-1 mb-4 text-black">
+                        <div key={review.id} className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-lg transition-shadow border border-gray-50/50">
+                            {/* Stars */}
+                            <div className="flex gap-1 mb-6">
                                 {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 fill-current" />
+                                    <Star key={i} className="w-5 h-5 fill-black text-black" />
                                 ))}
                             </div>
-                            <p className="text-neutral-700 font-medium mb-8 leading-relaxed">
+
+                            {/* Text */}
+                            <p className="text-gray-600 font-medium mb-8 leading-relaxed min-h-[80px]">
                                 "{review.text}"
                             </p>
+
+                            {/* Author */}
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full overflow-hidden bg-neutral-200">
+                                <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
                                     <img src={review.avatar} alt={review.author} className="w-full h-full object-cover" />
                                 </div>
                                 <div>
-                                    <p className="font-bold text-black">{review.author}</p>
-                                    <p className="text-sm text-neutral-500">{review.handle}</p>
+                                    <p className="font-bold text-gray-900">{review.author}</p>
+                                    <p className="text-sm text-gray-500">{review.handle}</p>
                                 </div>
                             </div>
                         </div>

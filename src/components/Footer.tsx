@@ -1,77 +1,35 @@
 import Link from "next/link"
-
-const footerLinks = [
-    {
-        title: "Shop",
-        links: [
-            { label: "All Products", href: "/shop" },
-            { label: "New Arrivals", href: "/shop?sort=new" },
-            { label: "Best Sellers", href: "/shop?sort=best" },
-        ],
-    },
-    {
-        title: "About",
-        links: [
-            { label: "Our Story", href: "/about" },
-            { label: "Sustainability", href: "/sustainability" },
-            { label: "Careers", href: "/careers" },
-        ],
-    },
-    {
-        title: "Support",
-        links: [
-            { label: "Contact Us", href: "/contact" },
-            { label: "Shipping & Returns", href: "/shipping" },
-            { label: "FAQs", href: "/faqs" },
-        ],
-    },
-]
+import { Facebook, Twitter, Instagram } from "lucide-react"
 
 export function Footer() {
     return (
-        <footer className="border-t bg-secondary/30">
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-                    <div className="flex flex-col space-y-4">
-                        <Link href="/" className="text-2xl font-bold tracking-tighter">
-                            WERA
-                        </Link>
-                        <p className="text-sm text-muted-foreground">
-                            Premium print-on-demand fashion for the modern generation.
-                        </p>
+        <footer className="bg-white border-t border-gray-100 py-16 px-6 lg:px-12">
+            <div className="container mx-auto flex flex-col items-center justify-center space-y-8">
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2">
+                    <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
+                        <span className="text-white font-bold text-xl">W</span>
                     </div>
-                    {footerLinks.map((section) => (
-                        <div key={section.title} className="flex flex-col space-y-4">
-                            <h4 className="text-sm font-semibold">{section.title}</h4>
-                            <ul className="space-y-2 text-sm text-muted-foreground">
-                                {section.links.map((link) => (
-                                    <li key={link.label}>
-                                        <Link
-                                            href={link.href}
-                                            className="hover:text-primary transition-colors"
-                                        >
-                                            {link.label}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                </Link>
+
+                {/* Nav */}
+                <nav className="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-600">
+                    <Link href="/" className="hover:text-black transition-colors">Home</Link>
+                    <Link href="/products" className="hover:text-black transition-colors">Products</Link>
+                    <Link href="/shop" className="hover:text-black transition-colors">Shop</Link>
+                    <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
+                </nav>
+
+                {/* Social */}
+                <div className="flex gap-6 text-gray-400">
+                    <Link href="#" className="hover:text-black transition-colors"><Facebook className="w-5 h-5" /></Link>
+                    <Link href="#" className="hover:text-black transition-colors"><Twitter className="w-5 h-5" /></Link>
+                    <Link href="#" className="hover:text-black transition-colors"><Instagram className="w-5 h-5" /></Link>
                 </div>
-                <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 md:flex-row text-sm text-muted-foreground">
-                    <p>&copy; {new Date().getFullYear()} WERA. All rights reserved.</p>
-                    <div className="flex gap-4">
-                        <Link href="#" className="hover:text-primary">
-                            Instagram
-                        </Link>
-                        <Link href="#" className="hover:text-primary">
-                            TikTok
-                        </Link>
-                        <Link href="#" className="hover:text-primary">
-                            Twitter
-                        </Link>
-                    </div>
-                </div>
+
+                <p className="text-xs text-gray-400">
+                    © {new Date().getFullYear()} WERA. All rights reserved.
+                </p>
             </div>
         </footer>
     )

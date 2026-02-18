@@ -1,44 +1,39 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { ShoppingBag, User, Search, Menu, X } from "lucide-react"
+import { ShoppingBag, Search, Heart, Menu, X } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 
 const navLinks = [
     { href: "/", label: "Home" },
+    { href: "/products", label: "Products" },
     { href: "/shop", label: "Shop" },
-    { href: "/collections", label: "Collections" },
-    { href: "/about", label: "About" },
-    { href: "/journal", label: "Journal" },
+    { href: "/files", label: "Files" },
+    { href: "/contact", label: "Contact" },
 ]
 
 export function Navbar() {
-    const pathname = usePathname()
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-            <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+            <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold tracking-tighter">
-                    WERA
+                <Link href="/" className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+                        <span className="text-white font-bold text-lg">W</span>
+                    </div>
+                    <span className="text-xl font-bold tracking-tight">WERA</span>
                 </Link>
 
-                {/* Desktop Nav */}
+                {/* Desktop Menu */}
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
                         <Link
-                            key={link.href}
+                            key={link.label}
                             href={link.href}
-                            className={cn(
-                                "text-sm font-medium transition-colors hover:text-primary",
-                                pathname === link.href
-                                    ? "text-primary"
-                                    : "text-muted-foreground"
-                            )}
+                            className="text-sm font-medium text-gray-600 hover:text-black transition-colors"
                         >
                             {link.label}
                         </Link>
@@ -46,60 +41,39 @@ export function Navbar() {
                 </div>
 
                 {/* Icons */}
-                <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" className="hidden sm:flex">
-                        <Search className="h-5 w-5" />
-                        <span className="sr-only">Search</span>
-                    </Button>
-                    <Link href="/auth/login">
-                        <Button variant="ghost" size="icon">
-                            <User className="h-5 w-5" />
-                            <span className="sr-only">Account</span>
-                        </Button>
+                <div className="flex items-center gap-6">
+                    <button className="text-gray-600 hover:text-black transition-colors">
+                        <Search className="w-5 h-5" />
+                    </button>
+                    <button className="hidden sm:block text-gray-600 hover:text-black transition-colors">
+                        <Heart className="w-5 h-5" />
+                    </button>
+                    <Link href="/cart" className="relative text-gray-600 hover:text-black transition-colors">
+                        <ShoppingBag className="w-5 h-5" />
+                        <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full" />
                     </Link>
-                    <Link href="/cart">
-                        <Button variant="ghost" size="icon" className="relative">
-                            <ShoppingBag className="h-5 w-5" />
-                            <span className="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500" />
-                            <span className="sr-only">Cart</span>
-                        </Button>
-                    </Link>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        className="md:hidden"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    <button
+                        className="md:hidden text-gray-600"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
-                        {isMobileMenuOpen ? (
-                            <X className="h-5 w-5" />
-                        ) : (
-                            <Menu className="h-5 w-5" />
-                        )}
-                        <span className="sr-only">Menu</span>
-                    </Button>
+                        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
                 </div>
             </div>
 
             {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-                <div className="md:hidden border-t p-4 bg-background">
-                    <div className="flex flex-col space-y-4">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={cn(
-                                    "text-sm font-medium transition-colors hover:text-primary",
-                                    pathname === link.href
-                                        ? "text-primary"
-                                        : "text-muted-foreground"
-                                )}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                    </div>
+            {isMenuOpen && (
+                <div className="md:hidden border-t py-4 px-6 bg-white space-y-4">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.label}
+                            href={link.href}
+                            className="block text-sm font-medium text-gray-600 hover:text-black py-2"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
                 </div>
             )}
         </nav>

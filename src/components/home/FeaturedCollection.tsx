@@ -12,13 +12,13 @@ export function FeaturedCollection() {
     return (
         <section className="py-24 px-6 lg:px-12 bg-transparent">
             <div className="container mx-auto space-y-12">
-                <div className="flex items-center justify-between">
-                    <h2 className="text-4xl font-bold tracking-tight text-black max-w-sm leading-tight">Drop-style featured collection</h2>
+                <div className="flex items-center justify-between pb-4">
+                    <h2 className="text-3xl font-bold tracking-tight text-black max-w-sm leading-tight">Drop-style featured collection</h2>
                     <div className="flex gap-2">
-                        <button className="p-2 rounded-full border border-neutral-200 hover:bg-neutral-100 transition-colors">
+                        <button className="p-2 rounded-full border border-gray-200 hover:bg-black hover:text-white transition-colors">
                             <ChevronLeft className="w-5 h-5" />
                         </button>
-                        <button className="p-2 rounded-full border border-neutral-200 hover:bg-neutral-100 transition-colors">
+                        <button className="p-2 rounded-full border border-gray-200 hover:bg-black hover:text-white transition-colors">
                             <ChevronRight className="w-5 h-5" />
                         </button>
                     </div>
@@ -27,15 +27,15 @@ export function FeaturedCollection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {DROP_PRODUCTS.map((product) => (
                         <div key={product.id} className="group cursor-pointer">
-                            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-neutral-100 mb-4 relative shadow-sm">
+                            <div className="aspect-[3.5/4.5] rounded-3xl overflow-hidden bg-gray-100 mb-4 relative shadow-sm hover:shadow-lg transition-all duration-500">
                                 <img
                                     src={product.image}
                                     alt={product.name}
-                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
-                            <div className="space-y-1">
-                                <h3 className="font-bold text-lg">{product.name}</h3>
+                            <div className="space-y-1 px-1">
+                                <h3 className="font-bold text-lg text-gray-900 group-hover:text-black">{product.name}</h3>
                                 <p className="font-bold text-black">${product.price.toFixed(2)}</p>
                             </div>
                         </div>

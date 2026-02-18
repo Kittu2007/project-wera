@@ -1,38 +1,39 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 export function Hero() {
     return (
-        <section className="relative w-full py-20 lg:py-32 px-6 lg:px-12 bg-transparent">
+        <section className="relative w-full py-20 lg:py-32 px-6 lg:px-12 overflow-hidden">
             <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
                 <div className="flex flex-col items-start space-y-8 z-10">
-                    <div className="space-y-2">
-                        <h1 className="text-6xl font-black tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl text-black leading-[0.9]">
+                    <div className="space-y-1">
+                        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight text-black leading-[0.9]">
                             MYTHOLOGY
                             <br />
                             REMIXED
                         </h1>
-                        <p className="text-xl md:text-2xl font-medium text-neutral-600 tracking-wide mt-4">
+                        <p className="text-lg md:text-xl font-semibold text-gray-500 tracking-wide uppercase mt-4">
                             DROP 003: CELEBRITY X MYTH
                         </p>
                     </div>
 
                     <Link href="/shop">
-                        <Button className="rounded-full px-10 py-8 text-xl font-bold bg-black text-white hover:bg-neutral-800 transition-all shadow-lg hover:shadow-xl hover:scale-105">
+                        <button className="px-10 py-4 bg-black text-white rounded-lg text-lg font-bold hover:bg-gray-900 transition-all shadow-lg hover:shadow-xl hover:scale-105 active:scale-95">
                             Shop now
-                        </Button>
+                        </button>
                     </Link>
                 </div>
 
                 {/* Right Image */}
                 <div className="relative z-10 w-full flex justify-center lg:justify-end">
-                    <div className="relative w-full max-w-[600px] aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl bg-white/50 backdrop-blur-sm ring-1 ring-black/5">
+                    <div className="relative w-full max-w-[500px] aspect-[3.5/4.5] rounded-[2.5rem] overflow-hidden shadow-2xl">
                         <img
                             src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
-                            alt="WERA Model in White Hoodie"
-                            className="object-cover w-full h-full"
+                            alt="WERA Model"
+                            className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                         />
+                        {/* Subtle inner shadow overlay */}
+                        <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.1)] pointer-events-none" />
                     </div>
                 </div>
             </div>
