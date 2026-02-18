@@ -16,15 +16,15 @@ export function Hero() {
                     </p>
                     <div className="flex gap-4">
                         <Link href="/shop">
-                            <Button size="lg" className="rounded-full px-8 text-lg font-semibold">
+                            <Button size="lg" className="rounded-full px-8 text-lg font-semibold cursor-pointer pointer-events-auto">
                                 Shop Now
                             </Button>
                         </Link>
                     </div>
                 </div>
 
-                {/* Visual Element / Placeholder for Model Image */}
-                <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:max-w-none md:mr-0 rounded-3xl overflow-hidden shadow-2xl">
+                {/* Visual Element */}
+                <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:max-w-none md:mr-0 rounded-3xl overflow-hidden shadow-2xl z-10">
                     <img
                         src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
                         alt="WERA Model"
