@@ -1,15 +1,15 @@
 import Link from "next/link"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-// Mock Data
+// Mock Data with Real Images
 const PRODUCTS = [
-    { id: "1", name: "Ganesh Graphic Hoodie", price: 68.0, image: "/placeholder-hoodie.jpg", slug: "ganesh-graphic-hoodie" },
-    { id: "2", name: "WERA & Graphic Cap", price: 68.0, image: "/placeholder-cap.jpg", slug: "wera-graphic-cap" },
-    { id: "3", name: "Celebrity Tote Bag", price: 34.0, image: "/placeholder-bag.jpg", slug: "celebrity-tote-bag" },
-    { id: "4", name: "Graphic Tee", price: 45.0, image: "/placeholder-tee.jpg", slug: "graphic-tee" },
-    { id: "5", name: "Pastel Knit Sweater", price: 85.0, image: "/placeholder-sweater.jpg", slug: "pastel-knit-sweater" },
-    { id: "6", name: "Classic Logo Tee", price: 35.0, image: "/placeholder-logo.jpg", slug: "classic-logo-tee" },
+    { id: "1", name: "Ganesh Graphic Hoodie", price: 68.0, image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80", slug: "ganesh-graphic-hoodie" },
+    { id: "2", name: "WERA & Graphic Cap", price: 28.0, image: "https://images.unsplash.com/photo-1588117260148-44b8a8707ec7?auto=format&fit=crop&w=600&q=80", slug: "wera-graphic-cap" },
+    { id: "3", name: "Celebrity Tote Bag", price: 34.0, image: "https://images.unsplash.com/photo-1590874102987-9caa41619297?auto=format&fit=crop&w=600&q=80", slug: "celebrity-tote-bag" },
+    { id: "4", name: "Graphic Tee", price: 45.0, image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80", slug: "graphic-tee" },
+    { id: "5", name: "Pastel Knit Sweater", price: 85.0, image: "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?auto=format&fit=crop&w=600&q=80", slug: "pastel-knit-sweater" },
+    { id: "6", name: "Classic Logo Tee", price: 35.0, image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=600&q=80", slug: "classic-logo-tee" },
 ]
 
 export default function ShopPage() {
@@ -33,12 +33,16 @@ export default function ShopPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {PRODUCTS.map((product) => (
                     <Link key={product.id} href={`/product/${product.slug}`}>
-                        <Card className="h-full border-none shadow-sm hover:shadow-md transition-shadow bg-secondary/20">
+                        <Card className="h-full border-none shadow-none hover:shadow-lg transition-all duration-300 bg-transparent group">
                             <CardContent className="p-0">
-                                <div className="aspect-[4/5] relative bg-white overflow-hidden rounded-t-lg flex items-center justify-center">
-                                    <div className="text-muted-foreground/20 text-4xl font-black">WERA</div>
+                                <div className="aspect-[4/5] relative bg-secondary/10 overflow-hidden rounded-xl mb-3">
+                                    <img
+                                        src={product.image}
+                                        alt={product.name}
+                                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                                    />
                                 </div>
-                                <div className="p-4">
+                                <div className="p-1">
                                     <h3 className="font-semibold text-lg">{product.name}</h3>
                                     <p className="text-muted-foreground">${product.price.toFixed(2)}</p>
                                 </div>

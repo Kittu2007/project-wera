@@ -24,10 +24,12 @@ export function Hero() {
                 </div>
 
                 {/* Visual Element / Placeholder for Model Image */}
-                <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:max-w-none md:mr-0 rounded-3xl overflow-hidden bg-gradient-to-br from-accent-blue via-accent-purple to-accent-peach shadow-2xl">
-                    <div className="absolute inset-0 flex items-center justify-center text-primary/20 text-4xl font-bold uppercase tracking-widest mix-blend-overlay">
-                        Drop 003
-                    </div>
+                <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:max-w-none md:mr-0 rounded-3xl overflow-hidden shadow-2xl">
+                    <img
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+                        alt="WERA Model"
+                        className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                    />
                     {/* Soft Glow Effect */}
                     <div className="absolute -inset-4 bg-gradient-to-tr from-accent-blue/40 to-accent-purple/40 blur-3xl -z-10" />
                 </div>

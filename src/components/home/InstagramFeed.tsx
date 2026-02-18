@@ -1,14 +1,13 @@
 import Link from "next/link"
-import { Card, CardContent } from "@/components/ui/card"
 import { Instagram } from "lucide-react"
 
 const INSTAGRAM_POSTS = [
-    { id: 1, image: "/placeholder-insta-1.jpg" },
-    { id: 2, image: "/placeholder-insta-2.jpg" },
-    { id: 3, image: "/placeholder-insta-3.jpg" },
-    { id: 4, image: "/placeholder-insta-4.jpg" },
-    { id: 5, image: "/placeholder-insta-5.jpg" },
-    { id: 6, image: "/placeholder-insta-6.jpg" },
+    { id: 1, image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" },
+    { id: 2, image: "https://images.unsplash.com/photo-1529139574466-a3005c407164?auto=format&fit=crop&w=400&q=80" },
+    { id: 3, image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" },
+    { id: 4, image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=400&q=80" },
+    { id: 5, image: "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?auto=format&fit=crop&w=400&q=80" },
+    { id: 6, image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80" },
 ]
 
 export function InstagramFeed() {
@@ -31,8 +30,12 @@ export function InstagramFeed() {
                             key={post.id}
                             className="group relative aspect-square overflow-hidden rounded-xl bg-muted"
                         >
+                            <img
+                                src={post.image}
+                                alt="Instagram post"
+                                className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                            />
                             <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
-                            {/* <Image src={post.image} alt="Instagram post" fill className="object-cover" /> */}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
                                 <Instagram className="h-8 w-8 text-white" />
                             </div>
