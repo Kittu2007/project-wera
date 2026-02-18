@@ -1,13 +1,12 @@
 @echo off
 setlocal enabledelayedexpansion
 echo ==========================================
-echo WERA E-Commerce: One-Click Deploy
+echo WERA E-Commerce: One-Click Deploy (Final)
 echo ==========================================
 
-:: Hardcoded paths and variables
+:: Hardcoded settings
 set "GIT_CMD=C:\Program Files\Git\cmd\git.exe"
-set "GITHUB_USER=Kittu2007"
-set "REPO_NAME=wera-ecommerce"
+set "REPO_URL=https://github.com/Kittu2007/project-wera.git"
 
 if not exist "!GIT_CMD!" (
     echo [ERROR] Git not found at "!GIT_CMD!"
@@ -16,7 +15,7 @@ if not exist "!GIT_CMD!" (
 )
 
 echo [INFO] Using Git: "!GIT_CMD!"
-echo [INFO] Deploying to GitHub user: %GITHUB_USER%
+echo [INFO] Target Repo: !REPO_URL!
 
 :: 1. Initialize & Configure
 if not exist .git (
@@ -25,19 +24,19 @@ if not exist .git (
     "!GIT_CMD!" branch -M main
 )
 
-:: Configure Identity
+:: Configure Identity (Required for commit)
 "!GIT_CMD!" config user.email "deploy@wera.app"
 "!GIT_CMD!" config user.name "Kittu2007"
 
 :: 2. Commit
 echo [INFO] Committing files...
 "!GIT_CMD!" add .
-"!GIT_CMD!" commit -m "Final Deploy"
+"!GIT_CMD!" commit -m "Final Deploy to Vercel"
 
-:: 3. Remote Setup (Reset origin to be sure)
+:: 3. Remote Setup
 echo [INFO] Setting up remote...
 "!GIT_CMD!" remote remove origin >nul 2>nul
-"!GIT_CMD!" remote add origin "https://github.com/%GITHUB_USER%/%REPO_NAME%.git"
+"!GIT_CMD!" remote add origin "!REPO_URL!"
 
 :: 4. Push
 echo [INFO] Pushing to GitHub...
@@ -49,5 +48,5 @@ echo [INFO] Starting Vercel Deployment...
 call vercel deploy --prod
 
 echo.
-echo [SUCCESS] deployment script finished!
+echo [SUCCESS] Deployment script finished!
 pause
