@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --radius: 1rem;
+}
+
+/* Soft blurred pastel gradient aura */
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Global Aura Background Effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(224, 242, 254, 0.4) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(243, 232, 255, 0.4) 0%, transparent 25%),
+    radial-gradient(circle at 50% 80%, rgba(255, 237, 213, 0.3) 0%, transparent 30%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

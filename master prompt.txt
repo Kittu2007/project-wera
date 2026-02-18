@@ -1,0 +1,167 @@
+You are building a production-ready full-stack e-commerce web application for a fashion print-on-demand brand named WERA.
+
+Strictly follow the provided UI design references and maintain consistent visual language across all pages.
+
+DO NOT redesign.
+DO NOT change theme.
+DO NOT introduce dark mode.
+DO NOT introduce new color systems.
+
+====================================================
+🎨 DESIGN SYSTEM (LOCKED)
+====================================================
+
+Visual Style:
+- Clean white base layout
+- Soft blurred pastel gradient aura backgrounds (blue, purple, warm peach tones)
+- Rounded cards and containers (large border radius)
+- Subtle soft shadows
+- Minimal modern sans-serif typography
+- Calm premium Gen-Z aesthetic
+- No aggressive animations
+- No glassmorphism
+- No neon
+- No heavy gradients
+
+Brand:
+- Logo: WERA (bold uppercase)
+- Minimal black primary buttons
+- Subtle gradient accent only for background glow and highlights
+
+Spacing:
+- Generous whitespace
+- Clear section separation
+- Soft vertical rhythm
+- Consistent padding across components
+
+Motion:
+- Subtle fade-in transitions
+- Soft hover lift (2–6px)
+- Smooth 250–350ms animations
+- No heavy parallax or WebGL
+
+====================================================
+🏗 FULL WEBSITE STRUCTURE
+====================================================
+
+Build the following pages:
+
+1️⃣ Homepage
+- Navbar (logo left, nav center, icons right)
+- Hero section (headline + model image + soft gradient glow)
+- Thin animated limited-drop banner
+- Trending Now slider (rounded product cards)
+- Instagram Feed grid
+- Reviews section (rounded testimonial cards)
+- Drop-style featured collection
+- Minimal footer
+
+2️⃣ Collection Page
+- Page title
+- Simple dropdown filters
+- Responsive product grid (3–4 columns desktop)
+- Rounded product cards
+- Pagination
+
+3️⃣ Product Page
+- Two-column layout
+- Large product image with thumbnails
+- Title, price, description
+- Size selector
+- Quantity selector
+- Add to Cart (black button)
+- Buy Now (outlined button)
+- POD note: “Printed fresh after order. Ships in 3–5 days.”
+- Reviews
+- Related products slider
+
+4️⃣ Cart Page
+- Product list with rounded cards
+- Quantity control
+- Remove option
+- Coupon field
+- Subtotal summary
+- Proceed to Checkout button
+
+5️⃣ Checkout Page
+- Two-column layout
+- Contact info
+- Shipping address
+- Shipping method
+- Payment method
+- Order summary panel
+- Clean, trust-focused design
+
+6️⃣ Login / Signup Page
+- Centered rounded card
+- Soft gradient background aura
+- Email & password fields
+- Social login options
+- Minimal footer links
+
+7️⃣ Admin Dashboard
+- Left sidebar navigation
+- Top header
+- Revenue summary cards (soft gradient cards)
+- Orders table
+- Sales analytics chart
+- Product management page
+- Add product form (drag & drop upload)
+- Discount management
+
+====================================================
+⚙️ TECH STACK REQUIREMENTS
+====================================================
+
+Frontend:
+- Next.js (App Router)
+- TailwindCSS
+- Framer Motion (subtle animations only)
+
+Backend:
+- API routes (Next.js)
+- PostgreSQL (via Prisma)
+- Stripe integration
+- Razorpay integration
+- Authentication (Clerk or NextAuth)
+
+Image handling:
+- Cloudinary or optimized image storage
+- Lazy loading enabled
+
+====================================================
+📦 DATABASE STRUCTURE
+====================================================
+
+Users
+Products
+Orders
+OrderItems
+Coupons
+
+Include:
+- Proper relational mapping
+- Order status tracking
+- Inventory support
+- POD production status field
+
+====================================================
+🚀 PERFORMANCE RULES
+====================================================
+
+- Fully responsive (mobile-first)
+- Optimized images
+- Lighthouse score target above 90
+- Clean component architecture
+- Reusable UI components
+- Modular folder structure
+
+====================================================
+🔒 IMPORTANT
+
+Maintain visual consistency with the provided references.
+Do not introduce new stylistic directions.
+Keep aesthetic calm, premium, and minimal.
+Prioritize performance and conversion clarity.
+
+Build production-ready code, not prototype UI.
