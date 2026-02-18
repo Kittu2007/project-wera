@@ -24,14 +24,17 @@ export function Hero() {
                 </div>
 
                 {/* Visual Element */}
-                <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:max-w-none md:mr-0 rounded-3xl overflow-hidden shadow-2xl z-10">
-                    <img
-                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
-                        alt="WERA Model"
-                        className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                    />
-                    {/* Soft Glow Effect */}
-                    <div className="absolute -inset-4 bg-gradient-to-tr from-accent-blue/40 to-accent-purple/40 blur-3xl -z-10" />
+                <div className="relative z-10 w-full max-w-md mx-auto md:max-w-none md:mr-0">
+                    {/* Focused Glow behind model */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-accent-blue/30 via-accent-purple/30 to-accent-peach/30 blur-[80px] -z-10 rounded-full" />
+
+                    <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                        <img
+                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+                            alt="WERA Model"
+                            className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                        />
+                    </div>
                 </div>
             </div>
         </section>

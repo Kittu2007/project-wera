@@ -30,7 +30,7 @@ const MOCK_TRENDING = [
 
 export function TrendingSlider() {
     return (
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 bg-transparent">
             <div className="container mx-auto space-y-10">
                 <div className="flex items-center justify-between">
                     <h2 className="text-3xl font-bold tracking-tight">Trending Now</h2>
@@ -41,7 +41,7 @@ export function TrendingSlider() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {MOCK_TRENDING.map((product) => (
-                        <Card key={product.id} className="border-none shadow-none bg-transparent">
+                        <Card key={product.id} className="border-none shadow-none bg-white/50 backdrop-blur-sm hover:bg-white/80 transition-colors">
                             <CardContent className="p-0 group cursor-pointer">
                                 <div className="aspect-square relative rounded-xl overflow-hidden bg-secondary/20 mb-4">
                                     <img
