@@ -20,10 +20,16 @@ export function Navbar() {
         <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
             <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                 {/* Logo */}
+                {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-                        <span className="text-white font-bold text-lg">W</span>
+                    <div className="flex items-center justify-center">
+                        {/* Shield-like Logo Placeholder */}
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L3 7V12C3 17.52 6.84 22.74 12 24C17.16 22.74 21 17.52 21 12V7L12 2Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <text x="50%" y="65%" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">W</text>
+                        </svg>
                     </div>
+                    {/* Text hidden on small screens if needed, but reference shows no text, just logo? Or Logo + Text? keeping Text for brand safety */}
                     <span className="text-xl font-bold tracking-tight">WERA</span>
                 </Link>
 
