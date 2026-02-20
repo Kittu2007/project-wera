@@ -2,53 +2,47 @@ import Link from "next/link"
 
 export function Hero() {
     return (
-        <section className="relative w-full overflow-hidden bg-white">
-            {/* GRADIENT AURA (Behind Hero Only) */}
+        <section className="relative w-full overflow-hidden min-h-[85vh] flex items-center bg-transparent">
+            {/* Custom Hero Gradients */}
             <div className="absolute inset-0 pointer-events-none z-0">
-                {/* Top Left Blue/Cyan Glow */}
-                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-blue-100/60 blur-[100px] rounded-full mix-blend-multiply" />
-                {/* Bottom Right Peach/Pink Glow */}
-                <div className="absolute top-[10%] right-[-10%] w-[50vw] h-[50vw] bg-pink-100/50 blur-[100px] rounded-full mix-blend-multiply" />
+                <div className="absolute top-[10%] left-[-5%] w-[40vw] h-[40vw] bg-blue-200/50 blur-[130px] rounded-full mix-blend-multiply" />
+                <div className="absolute bottom-[-10%] right-[-5%] w-[45vw] h-[45vw] bg-orange-200/50 blur-[140px] rounded-full mix-blend-multiply" />
+                <div className="absolute top-[40%] left-[30%] w-[35vw] h-[35vw] bg-pink-200/40 blur-[120px] rounded-full mix-blend-multiply" />
             </div>
 
-            <div className="container mx-auto px-6 lg:px-12 py-16 lg:py-24 relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="container mx-auto px-12 relative z-10 w-full pt-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    {/* LEFT COLUMN: Content */}
-                    <div className="flex flex-col items-start space-y-8">
-                        {/* Heading Group */}
-                        <div className="space-y-1">
-                            {/* MYTHOLOGY */}
-                            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black tracking-tighter text-black leading-[0.9]">
-                                MYTHOLOGY
-                            </h1>
-                            {/* REMIXED */}
-                            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black tracking-tighter text-black leading-[0.9]">
-                                REMIXED
+                    {/* Content */}
+                    <div className="flex flex-col items-start space-y-6 lg:pl-8">
+                        <div className="space-y-0">
+                            {/* MYTHOLOGY REMIXED */}
+                            <h1 className="text-[5.5rem] xl:text-[7rem] font-bold tracking-tight text-gray-900 leading-[1.05]">
+                                MYTHOLOGY<br />REMIXED
                             </h1>
                         </div>
 
                         {/* Subtitle */}
-                        <p className="text-lg md:text-xl font-bold text-neutral-500 tracking-wide uppercase">
+                        <p className="text-[1.1rem] font-bold text-gray-800 tracking-widest uppercase mt-4">
                             DROP 003: CELEBRITY X MYTH
                         </p>
 
                         {/* Button */}
-                        <Link href="/shop" className="group">
-                            <button className="px-10 py-4 bg-black text-white rounded-full text-lg font-bold hover:bg-neutral-800 transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95">
+                        <Link href="/shop" className="mt-8 block">
+                            <button className="px-10 py-3.5 bg-gray-900 text-white rounded-[0.4rem] text-sm font-semibold hover:bg-black transition-all shadow-md">
                                 Shop now
                             </button>
                         </Link>
                     </div>
 
-                    {/* RIGHT COLUMN: Image */}
+                    {/* Image */}
                     <div className="relative w-full flex justify-center lg:justify-end">
-                        {/* Image Container matching reference proportions (approx 4:5 vertical) */}
-                        <div className="relative w-[85%] max-w-[500px] aspect-[4/5] z-10">
+                        <div className="relative w-full max-w-[550px] aspect-[4/4.5] z-10">
+                            {/* Using high quality unsplash image as placeholder for the model tee */}
                             <img
-                                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
-                                alt="WERA Model in Graphic Tee"
-                                className="object-cover w-full h-full rounded-[2rem] shadow-2xl"
+                                src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=80"
+                                alt="WERA Model"
+                                className="object-cover w-full h-full rounded-none" // Image in ref has no border radius
                             />
                         </div>
                     </div>

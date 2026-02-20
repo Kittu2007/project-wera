@@ -16,23 +16,36 @@ const config: Config = {
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#F3F4F6",
+          DEFAULT: "#F9FAFB",
           foreground: "#1F2937",
         },
         accent: {
-          blue: "#E0F2FE", // Soft pastel blue
-          purple: "#F3E8FF", // Soft pastel purple
-          peach: "#FFEDD5", // Soft pastel peach
+          blue: "#E0F2FE",
+          purple: "#F3E8FF",
+          peach: "#FFEDD5",
         },
+        success: "#DEF7EC",
+        successText: "#03543F",
+        warning: "#FDF6B2",
+        warningText: "#723B13",
+        danger: "#FDE8E8",
+        dangerText: "#9B1C1C",
+        info: "#E1EFFE",
+        infoText: "#1E429F",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        xl: "1.5rem",
+        lg: "1rem",
+        md: "0.75rem",
+        sm: "0.5rem",
+        full: "9999px",
       },
       boxShadow: {
-        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
-        "glow": "0 0 40px -10px rgba(168, 85, 247, 0.15)",
+        "soft": "0 10px 40px -10px rgba(0,0,0,0.05)",
+        "glass": "0 8px 32px 0 rgba(31, 38, 135, 0.05)",
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },
